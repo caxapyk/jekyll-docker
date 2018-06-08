@@ -5,7 +5,7 @@ Jekyll Docker
 Installation
 ------------
 ```sh
-git clone https://github.com/caxapyk/jekyll-docker .
+git clone https://github.com/caxapyk/jekyll-docker
 cd jekyll-docker
 docker build --rm --no-cache -t jekyll .
 ```
