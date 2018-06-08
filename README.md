@@ -1,6 +1,6 @@
 Jekyll Docker
 -------------
-`Jekyll Docker` is a simple source to build docker image for Jekyll project management. It uses [Bundler](https://bundler.io/) inside as a base tool to control Jekyll and its dependencies. Built image includes only Bundler and system libraries for native extensions. Jekyll and all related gems located on a host machine project folder. Image based on docker ruby:alpine.  
+`Jekyll Docker` is a simple source to build [Docker](https://docker.com/) image for Jekyll project management. It use [Bundler](https://bundler.io/) inside as a base tool to control Jekyll and its dependencies. Built image includes only Bundler and system libraries for native extensions. Jekyll and all related gems located on a host machine project folder. Image based on ruby:alpine image.
 
 Installation
 ------------
@@ -22,13 +22,13 @@ docker run --rm \
 
 There are ready to use scripts:
 - `build` - alias to build Jekyll site
-- `new` - creates a new Jekyll project
-- `serve` - alias to run server fot Jekyll project at address [http://localhost:4000](http://localhost:4000).
+- `new` - create a new Jekyll project
+- `serve` - alias to run server for Jekyll project at address [http://localhost:4000](http://localhost:4000).
 You can add your own scripts there and then rebuild image.
 
 Create a new site
 ---------------
-As mentioned above Djekyll uses Bundler to manage Jekyll projects. We can create a new site manually or by using pre-installed script.
+As mentioned above `Jekyll Docker` uses Bundler to manage Jekyll projects. We can create a new site manually or by using pre-installed script.
 ```sh
 docker run --rm \
 	--volume="$PWD:/srv/jekyll" \
@@ -36,7 +36,7 @@ docker run --rm \
 	-it jekyll new
 ```
 
-Use [Jekyll docs](https://jekyllrb.com/tutorials/using-jekyll-with-bundler/) to install it manually by Bundler.
+Read [Jekyll docs](https://jekyllrb.com/tutorials/using-jekyll-with-bundler/) if you want to install it manually.
 
 Serve site
 ----------
@@ -44,7 +44,7 @@ To start Jekyll built-in web server just run (use `-d` flag to run as daemon):
 ```sh
 docker-compose up
 ```
-or run docker command with alias:
+or run Docker command with alias:
 ```sh
 docker run --rm \
 	--volume="$PWD:/srv/jekyll" \
@@ -67,7 +67,7 @@ docker run --rm \
 
 Update Jekyll
 -------------
-Use Bundler to manage version of Jekyll and its dependencies. To update all packages to thelatest version use command:
+Use [Bundler](https://bundler.io/) to manage Jekyll and its dependencies. To update all packages to the latest version use command:
 ```sh
 docker run --rm \
 	--volume="$PWD:/srv/jekyll" \
